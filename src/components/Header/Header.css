@@ -3,8 +3,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #f4f8fd00;
   border-bottom: 2px solid #ddd;
+  font-family: "GeistSans", "GeistSans Fallback", sans-serif;
 }
 
 /* Left side*/
@@ -20,16 +21,17 @@
 }
 
 .header__logo {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
   object-fit: cover;
   border-radius: 8px;
   filter: brightness(0) invert(1);
-  padding: 12px;
+  padding: 8px 11px;
 }
 
 .header__title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
 }
