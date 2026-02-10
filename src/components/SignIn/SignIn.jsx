@@ -3,7 +3,7 @@ import { useState, useContext, createContext } from "react";
 import { GeneralInputContext } from "../../App";
 
 function Input({ name }) {
-  const [user, setUser] = useContext(GeneralInputContext);
+  const { user, setUser } = useContext(GeneralInputContext);
 
   const fieldKey = name.toLowerCase() === "email" ? "email" : "userName";
 
@@ -32,7 +32,7 @@ function Input({ name }) {
   );
 }
 export default function SignIn({ HandleSignIn }) {
-  const [user, setUser] = useContext(GeneralInputContext);
+  const { user, setUser } = useContext(GeneralInputContext);
 
   return (
     <section className="signin">

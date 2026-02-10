@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { GeneralInputContext } from "../../App";
 
 export default function Header({ logged, userName }) {
-  const setIsLogged = useContext(GeneralInputContext);
+  const { setIsLogged } = useContext(GeneralInputContext);
   return (
     <header className="header">
       <div className="header__left">
