@@ -6,6 +6,7 @@
   background-color: #f4f8fd00;
   border-bottom: 2px solid #ddd;
   font-family: "GeistSans", "GeistSans Fallback", sans-serif;
+  padding: 12px 0;
 }
 
 /* Left side*/
@@ -17,7 +18,13 @@
 
 .header__logo-wrapper {
   background-color: lightblue;
-  border-radius: 15px;
+  border-radius: 9px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header__logo {
@@ -27,7 +34,6 @@
   object-fit: cover;
   border-radius: 8px;
   filter: brightness(0) invert(1);
-  padding: 8px 11px;
 }
 
 .header__title {
@@ -45,4 +51,19 @@
 .header__text {
   font-size: 1rem;
   color: #666;
+}
+.header__button {
+  padding: 12px;
+  background-color: #4f46e5;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 10px;
 }
