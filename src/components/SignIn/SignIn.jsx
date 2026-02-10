@@ -1,10 +1,9 @@
 import "./SignIn.css";
 import { useState, useContext, createContext } from "react";
-
-const GeneralInputContext = createContext(null);
+import { GeneralInputContext } from "../../App";
 
 function Input({ name }) {
-  const { signInInput, setSignInInput } = useContext(GeneralInputContext);
+  const [user, setUser] = useContext(GeneralInputContext);
 
   const fieldKey = name.toLowerCase() === "email" ? "email" : "userName";
 
@@ -20,9 +19,9 @@ function Input({ name }) {
         name={fieldKey}
         className="signin__input"
         placeholder={`Enter your ${name.toLowerCase()}`}
-        value={signInInput[fieldKey]}
+        value={user[fieldKey]}
         onChange={(e) =>
-          setSignInInput((prev) => ({
+          setUser((prev) => ({
             ...prev,
             [fieldKey]: e.target.value,
           }))
@@ -32,11 +31,8 @@ function Input({ name }) {
     </div>
   );
 }
-export default function SignIn() {
-  const [signInInput, setSignInInput] = useState({
-    userName: "",
-    email: "",
-  });
+export default function SignIn({ HandleSignIn }) {
+  const [user, setUser] = useContext(GeneralInputContext);
 
   return (
     <section className="signin">
@@ -46,22 +42,20 @@ export default function SignIn() {
           Sign in to access your personal dashboard
         </p>
 
-        <GeneralInputContext.Provider value={{ signInInput, setSignInInput }}>
-          <form className="signin__form">
-            <Input name="User Name" />
-            <Input name="Email" />
+        <form className="signin__form">
+          <Input name="User Name" />
+          <Input name="Email" />
 
-            <button
-              type="submit"
-              className="signin__button"
-              onClick={() => {
-                console.log(signInInput);
-              }}
-            >
-              Sign In
-            </button>
-          </form>
-        </GeneralInputContext.Provider>
+          <button
+            type="button"
+            className="signin__button"
+            onClick={() => {
+              HandleSignIn(user);
+            }}
+          >
+            Sign In
+          </button>
+        </form>
       </div>
     </section>
   );
